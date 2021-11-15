@@ -9,8 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+//        ArticleListView(articles: Article.previewData)
+        TabView
+        {
+            NewsTabView()
+                .tabItem {
+                    Label("News", systemImage: "newspaper")
+                }
+            
+            SearchTabView()
+                .tabItem{
+                    Label("Search", systemImage: "magnifyingglass")
+                }
+            
+            BookmarkTabView()
+                .tabItem {
+                    Label("Saved", systemImage: "bookmark")
+                }
+        }
     }
 }
 
